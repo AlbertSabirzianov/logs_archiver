@@ -14,6 +14,10 @@ git clone https://github.com/AlbertSabirzianov/logs_archiver.git
 ```commandline
 cd logs_archiver
 ```
+Дайте права на запуск скрипта
+```commandline
+chmod 777 script.sh
+```
 Откройте файл .env в котором установите переменные окружения
 ```
 LOG_FILE_PATHS="" # Абсолютные Пути до лог файлов разделённые запятой 
