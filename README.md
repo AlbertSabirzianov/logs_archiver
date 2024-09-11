@@ -38,9 +38,10 @@ git clone https://github.com/AlbertSabirzianov/logs_archiver.git
 ```commandline
 cd logs_archiver
 ```
-Дайте права на запуск скрипта
+Дайте права на запуск основного и загрузочного скрипта
 ```commandline
 chmod 777 script.sh
+chmod 777 env.sh
 ```
 Откройте файл env.sh в котором установите переменные окружения
 ```
