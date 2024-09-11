@@ -5,7 +5,8 @@
 Скрипт, который
 1) Архивирует каждый лог файл с именем "имя лог файла" + "число и время" в папку c именем лог файла (без расширения) + _arch_folder (если её нет - создаём) и стирает каждый лог файл (не удалять а делать пустым)
 2) Если какой-то архивный файл в папке архивов старше положенного срока (колличество дней указано в переменной DAYS_OF_LOG_SAVE) - удаляет его
-## Как Использовать
+
+## Как запустить
  скачайте репозиторий
 ```commandline
 git clone https://github.com/AlbertSabirzianov/logs_archiver.git
@@ -22,6 +23,30 @@ chmod 777 script.sh
 ```
 LOG_FILE_PATHS="" # Абсолютные Пути до лог файлов разделённые запятой 
 DAYS_OF_LOG_SAVE=30 # Число дней, которые логи хранятся
+```
+запустите скрипт
+```commandline
+./script.sh
+```
+
+## Как Использовать с помощью cron
+ скачайте репозиторий
+```commandline
+git clone https://github.com/AlbertSabirzianov/logs_archiver.git
+```
+перейдите в каталог со скриптом
+```commandline
+cd logs_archiver
+```
+Дайте права на запуск скрипта
+```commandline
+chmod 777 script.sh
+```
+Откройте файл env.sh в котором установите переменные окружения
+```
+#!/bin/sh
+export LOG_FILE_PATHS="" # Абсолютные Пути до лог файлов разделённые запятой 
+export DAYS_OF_LOG_SAVE=30 # Число дней, которые логи хранятся
 ```
 после этого для регулярного запуска настройте cron с помощью команды
 ```commandline
@@ -52,7 +77,7 @@ crontab -e
 # For more information see the manual pages of crontab(5) and cron(8)
 # 
 # m h  dom mon dow   command
-0 0 * * * <абсолютный путь до скрипта, например /home/user/logs_archiver/script.sh>
+0 0 * * * . <абсолютный путь до скрипта, например /home/user/logs_archiver/env.sh>; <абсолютный путь до скрипта, например /home/user/logs_archiver/script.sh>
 ```
 ## Внимание!
 для коректой работы скрипта необходимо чтобы все лог файлы, указанные в LOG_FILE_PATHS имели права на запись, перед запуском скрипта рекомендуется дать все права лог файлу
