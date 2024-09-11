@@ -77,7 +77,7 @@ crontab -e
 # For more information see the manual pages of crontab(5) and cron(8)
 # 
 # m h  dom mon dow   command
-0 0 * * * . <абсолютный путь до скрипта, например /home/user/logs_archiver/env.sh>; <абсолютный путь до скрипта, например /home/user/logs_archiver/script.sh>
+0 0 * * * . <абсолютный путь до загрузочного скрипта, например /home/user/logs_archiver/env.sh>; <абсолютный путь до скрипта, например /home/user/logs_archiver/script.sh>
 ```
 ## Внимание!
 для коректой работы скрипта необходимо чтобы все лог файлы, указанные в LOG_FILE_PATHS имели права на запись, перед запуском скрипта рекомендуется дать все права лог файлу
